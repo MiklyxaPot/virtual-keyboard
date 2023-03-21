@@ -55,7 +55,7 @@ button{cursor: pointer;}
 button ::-moz-focus-inner{padding: 0; border: 0;}
 a, a:visited{text-decoration: none;}
 a:hover{text-decoration: none;}
-ul il{list-style: none;}
+/* ul il{list-style: none;} */
 li{ list-style-type: none;}
 
 img{vertical-align: top;}
