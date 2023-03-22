@@ -1,0 +1,59 @@
+
+// ************color*********
+$colorPrimary: #F1CDB3;
+$colorDark: #545454;
+$colorDarkTwo: #4C4C4C;
+$colorLight: #FFFFFF;
+$colorGrey: #CDCDCD;
+$colorPets: #F6F6F6;
+$colorLight2: #FAFAFA;
+
+.container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0px 15px;
+}
+
+.btn {
+   width: 207px;
+   height: 52px;
+   background: $colorPrimary;
+   border-radius: 100px;
+   font-family: 'Georgia';
+   font-weight: 400;
+   font-size: 17px;
+   line-height: 130%;
+   color: #292929
+
+}
+
+.pet-btn{
+   width: 187px;
+   height: 52px; border: 2px solid $colorPrimary;
+   border-radius: 100px;
+   padding: 12px 0;
+   margin: 0 auto;
+}
+
+.text {
+   font-family: 'Arial';
+   font-weight: 400;
+   font-size: 15px;
+   line-height: 160%;
+}
+
+.title {
+   font-family: 'Georgia';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 35px;
+   line-height: 130%;
+   color: $colorDark;
+}
+.arrow{
+   width: 52px;
+   height: 52px;
+   border: 2px solid $colorPrimary;
+   border-radius: 100px;
+}

@@ -1,4 +1,4 @@
-
+@import'_base';
 
 
 .wrapper {
@@ -7,12 +7,7 @@
    flex-direction: column;
 }
 
-.container {
-   width: 100%;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0px 15px;
-}
+
 .main {
    flex: 1 1 auto;
 }
@@ -21,19 +16,12 @@
    background:url('../image/background/start-screen-gradient-background.png') center / cover no-repeat, url('../image/background/start-screen-background.jpg') center / cover no-repeat;
 }
 
-// ************color*********
-$colorPrimary: #F1CDB3;
-$colorDark: #545454;
-$colorDarkTwo: #4C4C4C;
-$colorLight: #FFFFFF;
-$colorGrey: #CDCDCD;
 
 
 
 
 
 .header {
-  
    min-height: 90px;
 
    &__body{
@@ -123,27 +111,15 @@ $colorGrey: #CDCDCD;
 
 		&__button {
          margin-top: 42px;
-         font-family: 'Georgia';
-         font-weight: 400;
-         font-size: 17px;
-         line-height: 130%;
-         color: #292929;
+        ;
 		}
 }
-.text {
-   font-family: 'Arial';
-   font-weight: 400;
-   font-size: 15px;
-   line-height: 160%;
-}
-.btn {
-   width: 207px;
-   height: 52px;
-   background: $colorPrimary;
-   border-radius: 100px;
-}
+
+
 .main {
+   flex: 1 1 100%;
 }
+// *********************ABOUT*************
 .about {
 
    display: grid;
@@ -175,13 +151,103 @@ $colorGrey: #CDCDCD;
          max-width: 410px;
 		}
 }
-.title {
-   font-family: 'Georgia';
-   font-style: normal;
-   font-weight: 400;
-   font-size: 35px;
-   line-height: 130%;
-   color: $colorDark;
+// ***************PETS*****************
+
+.pets {
+
+   background-color: $colorPets;
+   padding-top: 80px;
+   padding-bottom: 115px;
+
+   &__title {
+      max-width: 400px;
+      margin: 0 auto;
+     
+   }
+
+   &__slider {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+   }
+
+   &__button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+   }
 }
+
+.slider {
+  position: relative;
+
+		&__prew {
+         position: absolute;
+         top: 50%;
+         left: 0;
+       
+		}
+
+		&__next {
+         
+		}
+
+
+
+   margin-bottom: 60px;
+   &__card {
+      
+      max-height: 435px;
+      background: $colorLight2;
+      border-radius: 9px;
+      &:not(:last-child) {
+         margin-right: 10px;
+      }
+   }
+
+   &__img {
+   
+
+   }
+   &__img img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 9px;
+   }
+
+   &__name-pet {
+      margin-top: 30px;
+      font-family: 'Georgia';
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: $colorDark;
+      text-align: center;
+   }
+
+   &__btn {
+      margin-top: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+   }
+
+   &__link{
+      font-family: 'Georgia';
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 130%;
+      color: #292929;
+     
+   
+
+
+   }
+}
+
+
+
 .footer {
 }
