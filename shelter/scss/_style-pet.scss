@@ -1,0 +1,37 @@
+.pet__slider{
+   margin-top: 60px;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   justify-items: center;
+   row-gap: 20px;
+}
+.navigation {
+   display: flex;
+   column-gap: 20px;
+   justify-content: center;
+
+   &__prew-double {
+   }
+
+   &__prew-one {
+   }
+
+   &__first {
+   }
+
+   &__next-one {
+   }
+
+   &__next-double {
+   }
+}
+.inactive{
+   border: 2px solid #CDCDCD;
+}
+.active{
+   background: #F1CDB3;
+}
+
+
+
+
