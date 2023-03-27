@@ -1,0 +1,67 @@
+@font-face {
+   font-family: 'Georgia regular';
+   src: url(/shelter/fonts/georgia.ttf) format('ttf'), url(/shelter/fonts/georgia.woff) format('woff');
+   font-weight: 400;
+ }
+ 
+ @font-face {
+   font-family: 'Georgi Bold';
+   src: url(/shelter/fonts/georgia_bolditalic.ttf) format('ttf'), url(/shelter/fonts/georgia_bolditalic.woff) format('woff');
+   font-style: italic;
+   font-weight: 700;
+ }
+
+ 
+
+/* ОБНУЛЯНИЕ */
+*{
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,*:before, *:after{
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+} 
+/* меняет подсчетдлины блока так чтобыудобно верстать */
+
+:focus, :active{outline: none;}
+a:focus,a:active{outline: none;}
+/* убирает лининии обводки на неккоторых браузерах */
+
+nav,footer,header,aside{display: block;}
+/* дулает эти теги блочными  */
+
+html,body{
+   font-family: Georgia, Arial, sans-serif;
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+/* уравнтваем поведение шоифтов на разных платформах и браузерах, заприщает самовольное увеличение шрифта  */
+
+input,button,textarea{font-size: inherit;}
+/* просим их наследовать семейство шрифта так как по умолчаниюони не неследуют */
+input ::-ms-clear{display: none;}
+button{cursor: pointer;}
+button ::-moz-focus-inner{padding: 0; border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+/* ul il{list-style: none;} */
+li{ list-style-type: none;}
+
+img{vertical-align: top;}
+/* разные теги чтобыпо одинаковому в разных браузерах смотрелись */
+
+h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
+/* обнуляем все наши заголовки */
+
+
