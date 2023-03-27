@@ -213,6 +213,7 @@
       }
    }
 
+
    &__img {
    
 
@@ -221,7 +222,7 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
-      border-radius: 9px;
+      border-radius: 9px 9px 0 0 ;
    }
 
    &__name-pet {
@@ -350,7 +351,7 @@ padding: 80px 0 100px 0;
          margin-top: 20px;
          background: $colorPrimary;
          border-radius: 9px;
-         max-width: 330px;
+         max-width: 347px;
          height: auto;
          font-family: 'Georgia';
          font-style: normal;
@@ -384,19 +385,20 @@ padding: 80px 0 100px 0;
 
 .footer {
  
-
+.container{
+   background: url('../image/footer/footer-puppy.png') bottom right/ auto   no-repeat;
+}
    &__container {
-      background: url('../image/footer/footer-puppy.png') bottom right/ auto   no-repeat;
+      
+      max-width: 877px;;
       min-height: 350px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 56px 60px;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 56px 0px;
    }
 
    &__questions {
-      max-width: 278px;
-     
-
+      max-width: 280px;
    }
 
    &__address {
@@ -406,7 +408,8 @@ padding: 80px 0 100px 0;
 .questions-footer {
 
    &__title {
-      color:#FFFFFF
+      color:#FFFFFF;
+    
    }
 
    &__email {
@@ -436,14 +439,15 @@ padding: 80px 0 100px 0;
    }
 }
 .address-footer {
-
+max-width:300px;
    &__title {
-      color:#FFFFFF
+      color:#FFFFFF;
+      
    }
 
    &__sity {
       margin-top: 35px;
-      padding-left: 60px;
+      padding-left: 44px;
       position: relative;
       &::before{
          content:url(../image/footer/icon-marker.svg);
@@ -456,7 +460,7 @@ padding: 80px 0 100px 0;
 
    &__strit {
       margin-top: 32px;
-      padding-left: 60px;
+      padding-left: 44px;
       position: relative;
       &::before{
          content:url(../image/footer/icon-marker.svg);
