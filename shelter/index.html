@@ -96,10 +96,10 @@
                      <div class="slider__btn pet-btn"> <a href="" class="slider__link">Learn more</a></div>
                   </div>
                </div>
-               <div class="pets__prew arrow">
-               </div>
-               <div class="pets__next arrow">
-               </div>
+               <button class="pets__prew arrow">&#8594;
+            </button>
+               <button class="pets__next arrow">&#8594;
+               </button>
                <button type="submit" class="pets__button btn">Get to know the rest</button>
             </div>
 
@@ -149,26 +149,45 @@
          </section>
          <section class="donation ">
             <div class="container">
-               <div class="donation__content">
-                  <h2 class="donation__title title">
-                     You can also make a donation
-                  </h2>
-                  <div class="donation__subtitle">Name of the bank / Type of bank account</div>
-                  <!-- <input type="text" class="credit-card" placeholder="8380 2880 8028 8791 7435"> -->
-                  <div class="donation__card">
-                     8380 2880 8028 8791 7435
+               <div class="donation__body body-donation">
+                  <div class="body-donation__img">
+                     <img src="./image/donation/donation-dog.png" alt="">
                   </div>
-                  <div class="donation__info">
-                     Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at
-                     libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et
-                     malesuada fames ac ante ipsum primis in faucibus.
+                  <div class="body-donation__content">
+                     <h2 class="body-donation__title title">
+                        You can also make a donation
+                     </h2>
+                     <div class="body-donation__subtitle">Name of the bank / Type of bank account</div>
+                     <!-- <input type="text" class="credit-card" placeholder="8380 2880 8028 8791 7435"> -->
+                     <div class="body-donation__card">
+                        8380 2880 8028 8791 7435
+                     </div>
+                     <div class="body-donation__info">
+                        Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum
+                        at
+                        libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
+                        et
+                        malesuada fames ac ante ipsum primis in faucibus.
+                     </div>
                   </div>
                </div>
-
             </div>
          </section>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer bg-brown">
+         <div class="footer__container container">
+            <div class="footer__questions questions-footer">
+               <h3 class="questions-footer__title title">For questions and suggestions</h3>
+               <a href="mailto:email@shelter.com" class="questions-footer__email footer-text">email@shelter.com</a>
+               <a href="tel:136745677554" class="questions-footer__phone footer-text">+13 674 567 75 54</a>
+            </div>
+            <address class="footer__address address-footer" >
+               <h3 class="address-footer__title title">We are waiting for your visit</h3>
+               <a href="#" class="address-footer__sity footer-text">1 Central Street, Boston (entrance from the store)</a>
+               <a href="#" class="address-footer__strit footer-text">18 South Park, London </a>
+            </address>
+         </div>
+      </footer>
    </div>
    <script src="./js/app.js"></script>
 </body>
