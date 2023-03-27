@@ -176,32 +176,13 @@
    &__prew {
       top: 50%;
       left: 0;
-      &::before{
-         content: url(../image/pets/Arrow.svg);
-         position: absolute;
-        display: block;
-        top: 13px;
-        left: 16px;
-         width: 52px;
-         height: 52px;
-         
-      }
+  
+      transform: rotateY(180deg);
    }
 
    &__next {
       top: 50%;
       right: 0;
-      &::before{
-         content: url(../image/pets/Arrow.svg);
-         position: absolute;
-        display: block;
-        top: 13px;
-        left: -20px;
-         width: 52px;
-         height: 52px;
-         transform: rotateY(180deg);
-         
-      }
    }
 
    &__button{
@@ -325,38 +306,167 @@ row-gap: 55px;
 .donation {
   
    background-color: $colorPets;
-   &__content{
-      background: url('../image/donation/donation-dog.png') 0 0 no-repeat;
-      //  min-height: 482px;
-       display: flex;
-       flex-direction: column;
-       align-items:flex-end;
-       padding: 80px 0px 100px 0px;
-
-
-   }
+   padding: 80px 0px 100px 0px;
    
-   &__title {
-      max-width: 300px;
-   }
 
-   &__card {
-   }
+		&__body {
+      display: grid;
+         grid-template-columns: 60% 34%;
+         justify-items: end;
+		}
 
-   &__info {
-   }
+.body-donation {
+      &__img{
 
-   &__subtitle{
+         justify-content: right;
+      }
 
-   }
+		&__img img{
+         max-width: 100%;
+         height: auto;
+		}
+
+		&__content {
+         max-width: 380px;
+		}
+
+		&__title {
+         max-width: 300px;
+		}
+
+		&__subtitle {
+         margin-top: 20px;
+         font-family: 'Georgia';
+         font-weight: 400;
+         font-size: 15px;
+         line-height: 110%;
+         color: $colorDark;
+		}
+
+		&__card {
+         padding: 10px 15px;
+         margin-top: 20px;
+         background: $colorPrimary;
+         border-radius: 9px;
+         max-width: 330px;
+         height: auto;
+         font-family: 'Georgia';
+         font-style: normal;
+         align-items: center;
+         font-weight: 400;
+         font-size: 20px;
+         line-height: 115%;
+         color: $colorDark;
+         &::before{
+            content:url(../image/donation/credit-card.svg);
+            margin-right: 15px;
+         }
+		}
+
+		&__info {
+         margin-top: 20px;
+         font-family: 'Arial';
+         font-style: italic;
+         font-weight: 400;
+         font-size: 12px;
+         line-height: 150%;
+         color: #B2B2B2;
+		}
 }
 
 
+}
 
 
-
-
-
+// **********footer****
 
 .footer {
+ 
+
+   &__container {
+      background: url('../image/footer/footer-puppy.png') bottom right/ auto   no-repeat;
+      min-height: 350px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 56px 60px;
+   }
+
+   &__questions {
+      max-width: 278px;
+     
+
+   }
+
+   &__address {
+   }
 }
+
+.questions-footer {
+
+   &__title {
+      color:#FFFFFF
+   }
+
+   &__email {
+      position: relative;
+      margin-top: 45px;
+      padding-left: 60px;
+      &::before{
+         content:url(../image/footer/icon-email.svg);
+         position: absolute;
+         top: 0px;
+         left: 0px;
+      
+      }
+   }
+
+   &__phone {
+      position: relative;
+      margin-top: 45px;
+      padding-left: 60px;
+      &::before{
+         content:url(../image/footer/icon-phone.svg);
+         position: absolute;
+         top: 0px;
+         left: 0px;
+      
+      }
+   }
+}
+.address-footer {
+
+   &__title {
+      color:#FFFFFF
+   }
+
+   &__sity {
+      margin-top: 35px;
+      padding-left: 60px;
+      position: relative;
+      &::before{
+         content:url(../image/footer/icon-marker.svg);
+         position: absolute;
+         top: 0px;
+         left: 0px;
+      
+      }
+   }
+
+   &__strit {
+      margin-top: 32px;
+      padding-left: 60px;
+      position: relative;
+      &::before{
+         content:url(../image/footer/icon-marker.svg);
+         position: absolute;
+         top: 0px;
+         left: 0px;
+      
+      }
+   }
+}
+
+
+
+
+
