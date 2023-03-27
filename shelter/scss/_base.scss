@@ -7,6 +7,8 @@ $colorLight: #FFFFFF;
 $colorGrey: #CDCDCD;
 $colorPets: #F6F6F6;
 $colorLight2: #FAFAFA;
+$colorDark3:  #292929;
+
 
 .container {
    width: 100%;
@@ -15,6 +17,29 @@ $colorLight2: #FAFAFA;
    padding: 0px 15px;
    position: relative;
 }
+
+.link-activ{
+   border-bottom: 3px solid $colorPrimary;
+
+}
+
+.primary{
+   color:$colorPrimary;
+}
+.dark{
+   color:$colorDark;
+}
+.grey{
+   color: $colorGrey;
+}
+.ligth{
+   color: $colorLight;
+}
+
+.dark3{
+   $colorDark3:  #292929;
+}
+
 
 .btn {
    width: 207px;
@@ -53,7 +78,7 @@ $colorLight2: #FAFAFA;
    color: $colorDark;
 }
 .arrow{
-   position: absolute;
+   
    width: 52px;
    height: 52px;
    border: 2px solid $colorPrimary;
