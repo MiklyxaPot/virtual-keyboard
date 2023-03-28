@@ -93,13 +93,13 @@
 .not-only {
    background: url('../image/background/start-screen-puppy.png') bottom right/ auto   no-repeat;
    display: flex;
-   min-height: 908px;
+   min-height: 819px;
 
       &__content{
          flex: 0 1 40%;
-         margin-top: 345px;
+         margin-top: 250px;
          max-width: 460px;
-         padding-left: 17px;
+         padding-left: 4px;
       }
 		&__title {
          max-width: 310px;
@@ -136,8 +136,8 @@
    grid-template-columns: repeat(2, 1fr );
    align-items: center;
    min-height: 588px;
-   padding-top: 80px;
-   padding-bottom: 100px;
+   padding-top: 10px;
+   padding-bottom: 35px;
 		&__img {
          margin-top: 80px;
          display: block;
@@ -147,8 +147,7 @@
 		}
 
 		&__content {
-         margin-top: 94px;
-
+         margin-top: 17px;
 		}
 
 
@@ -162,13 +161,15 @@
 		}
 }
 // ***************PETS*****************
-
+.pets-1{
+   padding-bottom: 102px;
+}
 .pets {
 
 
    background-color: $colorPets;
    padding-top: 80px;
-   padding-bottom: 70px;
+ 
   
    &__title {
       text-align: center;
@@ -325,7 +326,7 @@ padding: 80px 0 100px 0;
 
 		&__body {
       display: grid;
-         grid-template-columns: 60% 34%;
+         grid-template-columns: 54% 35%;
          justify-items: end;
          align-items: center;
 		}
@@ -342,7 +343,7 @@ padding: 80px 0 100px 0;
 		}
 
 		&__content {
-         max-width: 380px;
+         max-width: 386px;
 		}
 
 		&__title {
@@ -350,7 +351,7 @@ padding: 80px 0 100px 0;
 		}
 
 		&__subtitle {
-         margin-top: 20px;
+         margin-top: 18px;
          font-family: 'Georgia';
          font-weight: 400;
          font-size: 15px;
@@ -364,7 +365,7 @@ padding: 80px 0 100px 0;
          margin-top: 20px;
          background: $colorPrimary;
          border-radius: 9px;
-         max-width: 347px;
+         max-width: 363px;
          height: auto;
          font-family: 'Georgia';
          font-style: normal;
@@ -373,9 +374,10 @@ padding: 80px 0 100px 0;
          font-size: 20px;
          line-height: 115%;
          color: $colorDark;
+         letter-spacing: 0.06em;
          &::before{
             content:url(../image/donation/credit-card.svg);
-            margin-right: 15px;
+            margin-right: 6px;
          }
 		}
 
@@ -440,7 +442,7 @@ padding: 80px 0 100px 0;
 
    &__phone {
       position: relative;
-      margin-top: 45px;
+      margin-top: 41px;
       padding-left: 60px;
       &::before{
          content:url(../image/footer/icon-phone.svg);
@@ -459,7 +461,7 @@ max-width:300px;
    }
 
    &__sity {
-      margin-top: 35px;
+      margin-top: 31px;
       padding-left: 44px;
       position: relative;
       &::before{
