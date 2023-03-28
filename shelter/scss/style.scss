@@ -71,14 +71,16 @@
 
 		&__item {
        
-
+         transition: .3s;
          &:not(:last-child) {
             margin-right: 35px;
          }
 		}
 
 		&__link {
-         transition: all 0.8s ease 0s;
+         display: block;
+         // transition: all 0.8s ease 0s;
+         transition: .3s;
          font-family: 'Arial';
          font-style: normal;
          font-weight: 400;
@@ -211,6 +213,11 @@
       &:not(:last-child) {
          margin-right: 10px;
       }
+      
+   }
+   &__card:hover> &__btn{
+      background: $primaryLight;
+      transition: all 0.3s ease 0s;
    }
 
 
