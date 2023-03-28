@@ -24,7 +24,7 @@
 
 
 .header {
-   min-height: 120px;
+   min-height: 60px;
 
    &__body{
       display: flex;
@@ -86,7 +86,7 @@
          font-weight: 400;
          font-size: 15px;
          line-height: 160%;
-         padding-bottom: 5px;
+         // padding-bottom: 5px;
 		}
 }
 .not-only {
