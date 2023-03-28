@@ -28,12 +28,18 @@
    }
 }
 .inactive{
-   border: 2px solid #CDCDCD;
+   border: 2px solid $colorGrey;
+   color: $colorGrey;
 }
 .active{
-   background: #F1CDB3;
+   background: $colorPrimary;
 }
 
+.inactive:hover{
+   border: 2px solid $colorGrey;
+   color: $colorGrey;
+   background: $colorPets;
+}
 
 
 
