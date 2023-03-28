@@ -68,7 +68,7 @@ $colorDark3:  #292929;
    letter-spacing: 0.06em;
    color: #292929;
    padding: 15px 45px;
- 
+   transition: all 0.3s ease 0s;
 }
 .btn:hover{
    background: $primaryLight;

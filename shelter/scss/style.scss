@@ -117,8 +117,10 @@
 		}
 
 		&__button {
+         display: block;
          margin-top: 42px;
-        ;
+         max-width: 208px;
+         transition: all 0.3s ease 0s;
 		}
 }
 
