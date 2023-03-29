@@ -21,7 +21,7 @@ $colorDark3:  #292929;
 
 .link-activ{
    border-bottom: 3px solid $colorPrimary;
-
+   pointer-events: none;
 }
 
 .primary{
