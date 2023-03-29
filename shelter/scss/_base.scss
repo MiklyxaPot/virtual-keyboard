@@ -60,6 +60,7 @@ $colorDark3:  #292929;
     max-width: 270px;
    // height: 52px;
    background: $colorPrimary;
+   font-style: normal;
    border-radius: 100px;
    font-family: 'Georgia';
    font-weight: 400;
@@ -93,6 +94,7 @@ $colorDark3:  #292929;
    font-weight: 400;
    font-size: 14px;
    line-height: 173%;
+   font-style: normal;
 }
 
 .title {
@@ -103,6 +105,7 @@ $colorDark3:  #292929;
    line-height: 130%;
    color: $colorDark;
    letter-spacing: 0.06em;
+   font-style: normal;
 }
 .arrow{
    width: 52px;
@@ -129,6 +132,7 @@ $colorDark3:  #292929;
    line-height: 115%;
    color: $colorPrimary;
    letter-spacing: 0.06em;
+   font-style: normal;
 }
 
 .footer-text:hover{
