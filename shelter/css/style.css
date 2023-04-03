@@ -1213,7 +1213,7 @@ h6 {
   }
 
   .help__title {
-    margin-bottom: 30px;
+    margin-bottom: 1.9375rem;
   }
 
   .items-help {
@@ -1288,6 +1288,12 @@ h6 {
 @media (max-width: 79.9375em) and (max-width: 20em) {
   .title {
     font-size: 1.5625rem;
+  }
+}
+
+@media (max-width: 70.5em) and (max-width: 20em) {
+  .pets__slider {
+    max-width: 37.5rem;
   }
 }
 
@@ -1643,6 +1649,26 @@ h6 {
 @supports not (min-height: clamp( 42.125rem , 34.6085164835rem  +  37.5824175824vw , 63.5rem )) {
     .not-only__container {
       min-height: calc(42.125rem + 21.375 * (100vw - 20rem) / 56.875);
+    }
+}
+}
+
+@media (max-width: 70.5em) and (min-width: 76.875em) {
+  .pets__slider {
+    max-width: 56.25rem;
+  }
+}
+
+@media (max-width: 70.5em) and (min-width: 20em) and (max-width: 76.875em) {
+@supports (max-width: clamp( 37.5rem , 30.9065934066rem  +  32.967032967vw , 56.25rem )) {
+    .pets__slider {
+      max-width: clamp( 37.5rem , 30.9065934066rem  +  32.967032967vw , 56.25rem );
+    }
+}
+
+@supports not (max-width: clamp( 37.5rem , 30.9065934066rem  +  32.967032967vw , 56.25rem )) {
+    .pets__slider {
+      max-width: calc(37.5rem + 18.75 * (100vw - 20rem) / 56.875);
     }
 }
 }
