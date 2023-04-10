@@ -62,8 +62,7 @@ window.addEventListener("DOMContentLoaded", (() => {
    }));
 
    // **********slider********
-   const slide = document.querySelectorAll(".slider__card"), 
-   prev = document.querySelector(".pets__prew"), 
+   const prev = document.querySelector(".pets__prew"), 
    next = document.querySelector(".pets__next"), 
    sliders = document.querySelector(".pets__slider"),
    nextNav = document.querySelector(".pets__navigation-next"), 
