@@ -57,6 +57,43 @@ window.addEventListener("DOMContentLoaded", (() => {
       }));
    }));
 
+   // ***************pagination*******
+
+   const sliders = document.querySelector(".pet__slider"),
+   nextNav = document.querySelector(".navigation__next-one"), 
+   prevNav = document.querySelector(".navigation__prew-one"),
+   pege1 = document.querySelector(['data-pge1']),
+   pege2 = document.querySelector(['data-pge2']),
+   pege3 = document.querySelector(['data-pge3']),
+   pege4 = document.querySelector(['data-pge4']);
+
+
+// function hide(){
+//    pege2.style.display = 'none';
+//    pege3.style.display = 'none';
+//    pege4.style.display = 'none';
+
+// }
+// hide()
+   // prev.addEventListener("click", (() => {
+   //    getSliders();
+   //    modalLoad();
+   // }));
+   // next.addEventListener("click", (() => {
+   //    getSliders();
+   //    modalLoad();
+   // }));
+   // prevNav.addEventListener("click", (() => {
+   //    getSliders();
+   //    modalLoad();
+   // }));
+   // nextNav.addEventListener("click", (() => {
+   //    getSliders();
+   //    modalLoad();
+   // }));
+
+   
+
    // ************modal**************
 const timeAfteLoad = ()=>{
    const modalOpen = document.querySelectorAll('[data-modal]'),

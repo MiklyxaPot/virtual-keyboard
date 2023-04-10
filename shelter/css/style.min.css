@@ -1917,10 +1917,22 @@ h6 {
    background: #F1CDB3;
 }
 
-/* .hide {
+ .none {
    display: none
 }
 
-.show{
+/* .show{
    display: block;
-} */
+}  */
+.page1{
+   display: block;
+}
+.page2{
+display: none;
+}
+.page3{
+  display: none; 
+}
+.page2{
+   display: none;
+}
