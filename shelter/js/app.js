@@ -79,6 +79,7 @@ window.addEventListener("DOMContentLoaded", (() => {
 
  function getSliders() {
       let data =  [{
+         "id": "01",
          "name": "Jennifer",
          "img": "img/pets/pets-jennifer.png",
          "type": "Dog",
@@ -90,6 +91,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "02",
          "name": "Sophia",
          "img": "img/pets/pets-sophia.jpg",
          "type": "Dog",
@@ -101,6 +103,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "03",
          "name": "Woody",
          "img": "img/pets/pets-woody.png",
          "type": "Dog",
@@ -112,6 +115,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "04",
          "name": "Scarlett",
          "img": "img/pets/pets-scarlet.png",
          "type": "Dog",
@@ -123,6 +127,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "05",
          "name": "Katrine",
          "img": "img/pets/pets-katrine.png",
          "type": "Cat",
@@ -134,6 +139,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "06",
          "name": "Timmy",
          "img": "img/pets/pets-timmy.png",
          "type": "Cat",
@@ -145,6 +151,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "07",
          "name": "Freddie",
          "img": "img/pets/pets-freddie.png",
          "type": "Cat",
@@ -156,6 +163,7 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["none"]
        },
        {
+         "id": "08",
          "name": "Charly",
          "img": "img/pets/pets-charly.jpg",
          "type": "Dog",
@@ -170,27 +178,28 @@ window.addEventListener("DOMContentLoaded", (() => {
      
       
       let num = randomNum < 7 ? randomNum++ : randomNum = 2;
-      sliders.innerHTML = `<div data-modal class="slider__card">
+      sliders.innerHTML = `<div data-modal id=${data[num].id} class="slider__card">
       <div class="slider__img">
          <picture><img src=${data[num].img} alt=${data[num].name}></picture>
       </div>
       <div class="slider__name-pet">${data[num].name}</div>
-      <div class="slider__btn pet-btn"> <a href="" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>
-   <div data-modal class="slider__card hide-523">
+   <div data-modal  id=${data[num-1].id} class="slider__card hide-523">
       <div class="slider__img">
          <picture><img src=${data[num-1].img} alt=${data[num-1].name}></picture>
       </div>
       <div class="slider__name-pet ">${data[num-1].name}</div>
-      <div class="slider__btn pet-btn"> <a href="" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>
-   <div data-modal class="slider__card hide">
+   <div data-modal id=${data[num+1].id} class="slider__card hide">
       <div class="slider__img">
          <picture><img src=${data[num +1].img} alt=${data[num +1].name}></picture>
       </div>
       <div class="slider__name-pet">${data[num +1].name}</div>
-      <div class="slider__btn pet-btn"> <a href="" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>`
+
    }
    getSliders();
 
@@ -331,8 +340,8 @@ const modalOpen = document.querySelectorAll('[data-modal]'),
          // };
 
    modalOpen.forEach(item =>{
-      item.addEventListener("click", () => {
-         console.log('hhghgh');
+      item.addEventListener("click", (e) => {
+         console.log(e.target.id);
          // getModal();
          modal.style.display = 'block';
          document.body.style.overflow = 'hidden';
