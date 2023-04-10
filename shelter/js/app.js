@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", (() => {
 
 
    async function getSliders() {
-      const dataSlides = "../js/pets.json";
+      const dataSlides = "https://github.com/rolling-scopes-school/miklyxapot-JSFE2023Q1/blob/shelter/shelter/js/pets.JSON";
       const res = await fetch(dataSlides);
       const data = await res.json();
       let num = randomNum < 7 ? randomNum++ : randomNum = 2;
