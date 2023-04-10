@@ -339,10 +339,28 @@ h6 {
    font-size: .9375rem;
    line-height: 160%
 }
+.menu__list-open {
+   right: 0;
+   -webkit-transition: right 0.3s ease 0s;
+   -o-transition: right 0.3s ease 0s;
+   transition: right 0.3s ease 0s;
+   overflow: hidden;
+ }
 
 .icon-menu {
    display: none
 }
+
+.icon-menu__open {
+   -webkit-transform: rotate(90deg);
+       -ms-transform: rotate(90deg);
+           transform: rotate(90deg);
+   -webkit-transition: -webkit-transform 0.3s ease 0s;
+   transition: -webkit-transform 0.3s ease 0s;
+   -o-transition: transform 0.3s ease 0s;
+   transition: transform 0.3s ease 0s;
+   transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+ }
 
 .icon-menu_dark {
    display: none
@@ -539,10 +557,8 @@ h6 {
 .pets__slider {
    margin: 0 auto;
    margin-top: 3.75rem;
-   display: -ms-grid;
-   display: grid;
-   -ms-grid-columns: (1fr)[3];
-   grid-template-columns: repeat(3, 1fr);
+   display: flex;
+   justify-content:space-around;
    justify-items: center;
    row-gap: 1.25rem;
    max-width: 1076px
