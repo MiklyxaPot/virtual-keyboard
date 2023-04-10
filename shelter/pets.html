@@ -21,7 +21,7 @@
 						<h1 class="logo__title "><a class="dark" href="./index.html">Cozy House</a> </h1>
 						<div class="logo__subtitile dark3">Shelter for pets in Boston</div>
 					</div>
-					<button type="button" class="menu__icon icon-menu_dark"><span></span></button>
+					
 
 					<nav class="header__menu menu">
 						<ul class="menu__list">
@@ -31,6 +31,7 @@
 							<li class="menu__item"><a href="#contact" class="menu__link dark">Contacts</a></li>
 						</ul>
 					</nav>
+               <button type="button" class="menu__icon icon-menu_dark"><span></span></button>
 				</div>
 			</div>
 		</div>
@@ -41,7 +42,7 @@
 						are looking for a house
 					</h3>
 					<div class="pet__slider  ">
-						<div class="slider__card">
+						<div data-modal class="slider__card">
 							<div class="slider__img">
 								<picture><source srcset="img/pets/pets-katrine.webp" type="image/webp"><img src="img/pets/pets-katrine.png" alt="katrine"></picture>
 							</div>
@@ -129,7 +130,30 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230403150241"></script>
+
+   <div class="modal">
+      <div class="modal__dialog">
+         <div class="modal__body">
+               <div data-close class="modal__close">&times;</div>
+               <img class ="modsl__img" src="/img/pets/pets-jennifer.png" alt="">
+               <div class="modal__content">
+                  <div class="modal__title title">Jennifer</div>
+                  <div class="modal__subtitle ">Dog - Labrador</div>
+                  <div class="modal__discrition">Jennifer is a sweet 2 months old Labrador that is patiently waiting to
+                     find a new forever home. This girl really enjoys being able to go outside to run and play, but
+                     won't hesitate to play up a storm in the house if she has all of her favorite toys.</div>
+                  <ul class="modal__list">
+                     <li class="modal__item">Age: <span>2 months</span></li>
+                     <li class="modal__item">Inoculations: <span>none</span></li>
+                     <li class="modal__item">Diseases: <span>none</span></li>
+                     <li class="modal__item">Parasites: <span>none</span></li>
+                  </ul>
+               </div>
+         </div>
+      </div>
+   </div>
+
+	<script src="js/app.js"></script>
 </body>
 
 </html>
