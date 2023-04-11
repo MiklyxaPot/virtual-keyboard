@@ -59,15 +59,81 @@ window.addEventListener("DOMContentLoaded", (() => {
 
    // ***************pagination*******
 
-   const sliders = document.querySelector(".pet__slider"),
+   const sliders = document.querySelectorAll(".pet__slider"),
    nextNav = document.querySelector(".navigation__next-one"), 
    prevNav = document.querySelector(".navigation__prew-one"),
-   pege1 = document.querySelector(['data-pge1']),
-   pege2 = document.querySelector(['data-pge2']),
-   pege3 = document.querySelector(['data-pge3']),
-   pege4 = document.querySelector(['data-pge4']);
+   firstNav = document.querySelector(".navigation__first"),
+   page1 = document.querySelector('[data-page1]'),
+   page2 = document.querySelector('[data-page2]'),
+   page3 = document.querySelector('[data-page3]'),
+   page4 = document.querySelector('[data-page4]');
 
 
+
+   function buttonValue(){
+      firstNav.textContent = "1";
+      firstNav.value = 1;
+   }
+   buttonValue();
+
+   function changPageOneNext(){
+      if(firstNav.value == 1){
+         prevNav.classList.toggle('inactive')
+         page1.style.display = 'none'
+         page2.style.display = ''
+         firstNav.textContent = "2";
+         firstNav.value = 2;
+      } else if (firstNav.value == 2){
+     
+         page2.style.display = 'none'
+         page3.style.display = ''
+         firstNav.textContent = "3";
+         firstNav.value = 3;
+      }else {
+         console.log('222');
+         page3.style.display = 'none'
+         page4.style.display = ''
+  
+         firstNav.textContent = "4";
+         firstNav.value = 4;
+      }
+     
+   
+}
+
+function changPageOnePrew(){
+   if(firstNav.value == 4 ){
+      // prevNav.classList.toggle('inactive')
+      page4.style.display = 'none'
+      page3.style.display = ''
+      firstNav.textContent = "3";
+      firstNav.value = 3;
+   } else if (firstNav.value == 3){
+      console.log('222');
+      page3.style.display = 'none'
+      page2.style.display = ''
+      firstNav.textContent = "2";
+      firstNav.value = 2;
+   }else {
+      prevNav.classList.toggle('inactive')
+      console.log('222');
+      page2.style.display = 'none'
+      page1.style.display = ''
+      firstNav.textContent = "1";
+      firstNav.value = 1;
+   }
+  
+
+}
+   
+  
+
+   nextNav.addEventListener('click', () =>{
+       changPageOneNext()
+   });
+   prevNav.addEventListener('click', () =>{
+      changPageOnePrew()
+  })
 // function hide(){
 //    pege2.style.display = 'none';
 //    pege3.style.display = 'none';
