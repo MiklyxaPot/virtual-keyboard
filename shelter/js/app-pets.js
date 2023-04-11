@@ -63,6 +63,8 @@ window.addEventListener("DOMContentLoaded", (() => {
    nextNav = document.querySelector(".navigation__next-one"), 
    prevNav = document.querySelector(".navigation__prew-one"),
    firstNav = document.querySelector(".navigation__first"),
+   prevNavDouble = document.querySelector(".navigation__prew-double "),
+   nextNavDouble = document.querySelector(".navigation__next-double"),
    page1 = document.querySelector('[data-page1]'),
    page2 = document.querySelector('[data-page2]'),
    page3 = document.querySelector('[data-page3]'),
@@ -84,15 +86,15 @@ window.addEventListener("DOMContentLoaded", (() => {
          firstNav.textContent = "2";
          firstNav.value = 2;
       } else if (firstNav.value == 2){
-     
-         page2.style.display = 'none'
-         page3.style.display = ''
+         prevNavDouble.classList.toggle('inactive')
+         page2.style.display = 'none';
+         page3.style.display = '';
          firstNav.textContent = "3";
          firstNav.value = 3;
       }else {
          console.log('222');
          page3.style.display = 'none'
-         page4.style.display = ''
+         page4.style.display = '';
   
          firstNav.textContent = "4";
          firstNav.value = 4;
@@ -104,28 +106,49 @@ window.addEventListener("DOMContentLoaded", (() => {
 function changPageOnePrew(){
    if(firstNav.value == 4 ){
       // prevNav.classList.toggle('inactive')
-      page4.style.display = 'none'
-      page3.style.display = ''
+      page4.style.display = 'none';
+      page3.style.display = '';
       firstNav.textContent = "3";
       firstNav.value = 3;
    } else if (firstNav.value == 3){
+      prevNavDouble.classList.toggle('inactive')
       console.log('222');
-      page3.style.display = 'none'
-      page2.style.display = ''
+      page3.style.display = 'none';
+      page2.style.display = '';
       firstNav.textContent = "2";
       firstNav.value = 2;
    }else {
       prevNav.classList.toggle('inactive')
       console.log('222');
-      page2.style.display = 'none'
-      page1.style.display = ''
+      page2.style.display = 'none';
+      page1.style.display = '';
       firstNav.textContent = "1";
       firstNav.value = 1;
    }
+}
+   
+function changPageOneNextDouble(){
+   if(firstNav.value == 1){
+      prevNav.classList.toggle('inactive');
+      prevNavDouble.classList.toggle('inactive')
+      page1.style.display = 'none'
+      page4.style.display = ''
+      firstNav.textContent = "4";
+      firstNav.value = 4;
+   } 
   
 
 }
-   
+function changPageOnePrewDouble(){
+   if(firstNav.value == 4 ){
+       prevNav.classList.toggle('inactive')
+       prevNavDouble.classList.toggle('inactive')
+      page4.style.display = 'none';
+      page1.style.display = ''
+      firstNav.textContent = "1";
+      firstNav.value = 1;
+   } 
+}
   
 
    nextNav.addEventListener('click', () =>{
@@ -133,6 +156,12 @@ function changPageOnePrew(){
    });
    prevNav.addEventListener('click', () =>{
       changPageOnePrew()
+  })
+  prevNavDouble.addEventListener('click', () =>{
+   changPageOnePrewDouble()
+  })
+  nextNavDouble.addEventListener('click', () =>{
+   changPageOneNextDouble()
   })
 // function hide(){
 //    pege2.style.display = 'none';
