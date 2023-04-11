@@ -566,7 +566,9 @@ h6 {
    background-color: #f6f6f6;
    padding-top: 5rem
 }
-
+.pets__wrapper{
+   position: relative;
+}
 .pets__title {
    text-align: center;
    max-width: 25rem;
@@ -1928,9 +1930,9 @@ h6 {
    display: none
 }
 
-/* .show{
-   display: block;
-}  */
+.show{
+   display: grid;
+} 
 .page1{
    display: block;
 }
