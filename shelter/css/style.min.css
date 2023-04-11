@@ -108,7 +108,9 @@ h6 {
    -webkit-box-direction: normal;
    -ms-flex-direction: column;
    flex-direction: column;
-   overflow: hidden
+   overflow: hidden;
+   position: relative;
+   
 }
 
 @supports (overflow:clip) {
@@ -129,7 +131,7 @@ h6 {
 
 [class*=__container] {
    max-width: 76.875rem;
-   position: relative;
+   /* position: relative; */
    margin: 0 auto;
    padding: 0 .9375rem
 }
@@ -334,11 +336,13 @@ h6 {
       max-width: 320px;
       top: -30px;
       right: -100%;
-      height: 1165px;
+      height: 100%;
       transition: right 0.3s ease 0s;
       justify-content: center;
       width: 320px;
       z-index: 4;
+      position: absolute;
+
    }
 }
 
@@ -1296,15 +1300,18 @@ h6 {
       -ms-flex-direction: column;
       flex-direction: column;
       max-width: 320px;
-      top: -30px;
+      top: 0;
+      padding-top: 100px;
       /* right: -100%; */
-      height: 72.8125rem;
+      /* height: 72.8125rem; */
+      height: 100%;
       -webkit-transition: right .3s ease 0s;
       -o-transition: right .3s ease 0s;
       transition: right .3s ease 0s;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+      /* -webkit-box-pack: center;
+      -ms-flex-pack: center; */
+      justify-content: flex-start;
+      /* justify-content: center; */
       width: 320px;
       z-index: 4
    }
@@ -1548,13 +1555,13 @@ h6 {
    }
 }
 
-@media (max-width:47.9375em) and (max-width:47.875em) and (min-width:76.875em) {
+/* @media (max-width:47.9375em) and (max-width:47.875em) and (min-width:76.875em) {
    .menu__list {
       height: 72.8125rem
    }
-}
+} */
 
-@media (max-width:47.9375em) and (max-width:47.875em) and (min-width:20em) and (max-width:76.875em) {
+/* @media (max-width:47.9375em) and (max-width:47.875em) and (min-width:20em) and (max-width:76.875em) {
    @supports (height:clamp(51.4375rem, 43.9210164835rem + 37.5824175824vw, 72.8125rem)) {
       .menu__list {
          height: clamp(51.4375rem, 43.9210164835rem + 37.5824175824vw, 72.8125rem)
@@ -1566,7 +1573,7 @@ h6 {
          height: calc(51.4375rem + 21.375 * (100vw - 20rem)/ 56.875)
       }
    }
-}
+} */
 
 @media (max-width:48em) and (min-width:76.875em) {
    .header__item:not(:last-child) {
