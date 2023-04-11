@@ -68,7 +68,9 @@ window.addEventListener("DOMContentLoaded", (() => {
    page1 = document.querySelector('[data-page1]'),
    page2 = document.querySelector('[data-page2]'),
    page3 = document.querySelector('[data-page3]'),
-   page4 = document.querySelector('[data-page4]');
+   page4 = document.querySelector('[data-page4]'),
+   page5 = document.querySelector('[data-page5]'),
+   page6 = document.querySelector('[data-page6]');
 
 
 
@@ -91,28 +93,46 @@ window.addEventListener("DOMContentLoaded", (() => {
          page3.style.display = '';
          firstNav.textContent = "3";
          firstNav.value = 3;
-      }else {
-         console.log('222');
-         page3.style.display = 'none'
+      }else if (firstNav.value == 3){
+         page3.style.display = 'none';
          page4.style.display = '';
-  
          firstNav.textContent = "4";
          firstNav.value = 4;
+      }else if (firstNav.value == 4){
+         page4.style.display = 'none';
+         page5.style.display = '';
+         firstNav.textContent = "5";
+         firstNav.value = 5;
+      }else {
+        
+         page5.style.display = 'none'
+         page6.style.display = '';
+  
+         firstNav.textContent = "6";
+         firstNav.value = 6;
       }
      
    
 }
 
 function changPageOnePrew(){
-   if(firstNav.value == 4 ){
-      // prevNav.classList.toggle('inactive')
+   if(firstNav.value == 6 ){
+      page6.style.display = 'none';
+      page5.style.display = '';
+      firstNav.textContent = "5";
+      firstNav.value = 5;
+   } else if (firstNav.value == 5){
+      page5.style.display = 'none';
+      page4.style.display = '';
+      firstNav.textContent = "4";
+      firstNav.value = 4;
+   }else if (firstNav.value == 4){
       page4.style.display = 'none';
       page3.style.display = '';
       firstNav.textContent = "3";
       firstNav.value = 3;
-   } else if (firstNav.value == 3){
+   }else if (firstNav.value == 3){
       prevNavDouble.classList.toggle('inactive')
-      console.log('222');
       page3.style.display = 'none';
       page2.style.display = '';
       firstNav.textContent = "2";
@@ -128,22 +148,30 @@ function changPageOnePrew(){
 }
    
 function changPageOneNextDouble(){
-   if(firstNav.value == 1){
+   if(firstNav.value >= 1){
       prevNav.classList.toggle('inactive');
-      prevNavDouble.classList.toggle('inactive')
-      page1.style.display = 'none'
-      page4.style.display = ''
-      firstNav.textContent = "4";
-      firstNav.value = 4;
+      prevNavDouble.classList.toggle('inactive');
+      page1.style.display = 'none';
+      page2.style.display = 'none';
+      page3.style.display = 'none';
+      page4.style.display = 'none';
+      page5.style.display = 'none';
+      page6.style.display = ''
+      firstNav.textContent = "6";
+      firstNav.value = 6;
    } 
   
 
 }
 function changPageOnePrewDouble(){
-   if(firstNav.value == 4 ){
+   if(firstNav.value <= 6 ){
        prevNav.classList.toggle('inactive')
        prevNavDouble.classList.toggle('inactive')
+      page6.style.display = 'none';
+      page2.style.display = 'none';
+      page3.style.display = 'none';
       page4.style.display = 'none';
+      page5.style.display = 'none';
       page1.style.display = ''
       firstNav.textContent = "1";
       firstNav.value = 1;
