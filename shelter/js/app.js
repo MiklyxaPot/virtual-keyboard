@@ -68,14 +68,6 @@ window.addEventListener("DOMContentLoaded", (() => {
    nextNav = document.querySelector(".pets__navigation-next"), 
    prevNav = document.querySelector(".pets__navigation-prew");
 
-   let randomNum;
-   function getRandomNum(min = 2, max = 7) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-       randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-   }
-   getRandomNum();
-
 
  function getSliders() {
       let data =  [{
@@ -175,28 +167,42 @@ window.addEventListener("DOMContentLoaded", (() => {
          "parasites": ["lice", "fleas"]
        }];
      
-     
-      
-      let num = randomNum < 7 ? randomNum++ : randomNum = 2;
-      sliders.innerHTML = `<div data-modal id=${data[num].id} class="slider__card">
+       const arrayNum = () => {
+         const indexes = [0, 1, 2, 3, 4, 5, 6, 7]
+       
+         let randomArray = []
+       
+         randomArray = indexes.slice(0)
+       
+         for (let i = 0; i < randomArray.length; i++) {
+           let j = Math.floor(Math.random() * (i + 1));
+           [randomArray[i], randomArray[j]] = [randomArray[j], randomArray[i]];
+         }
+       
+         return randomArray
+       }
+       
+       let randomNum = arrayNum().slice(0,3);
+
+      sliders.innerHTML = `<div data-modal id=${data[randomNum[0]].id} class="slider__card">
       <div class="slider__img">
-         <picture><img src=${data[num].img} alt=${data[num].name}></picture>
+         <picture><img src=${data[randomNum[0]].img} alt=${data[randomNum[0]].name}></picture>
       </div>
-      <div class="slider__name-pet">${data[num].name}</div>
+      <div class="slider__name-pet">${data[randomNum[0]].name}</div>
       <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>
-   <div data-modal  id=${data[num-1].id} class="slider__card hide-523">
+   <div data-modal  id=${data[randomNum[1]].id} class="slider__card hide-523">
       <div class="slider__img">
-         <picture><img src=${data[num-1].img} alt=${data[num-1].name}></picture>
+         <picture><img src=${data[randomNum[1]].img} alt=${data[randomNum[1]].name}></picture>
       </div>
-      <div class="slider__name-pet ">${data[num-1].name}</div>
+      <div class="slider__name-pet ">${data[randomNum[1]].name}</div>
       <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>
-   <div data-modal id=${data[num+1].id} class="slider__card hide">
+   <div data-modal id=${data[randomNum[2]].id} class="slider__card hide">
       <div class="slider__img">
-         <picture><img src=${data[num +1].img} alt=${data[num +1].name}></picture>
+         <picture><img src=${data[randomNum[2]].img} alt=${data[randomNum[2]].name}></picture>
       </div>
-      <div class="slider__name-pet">${data[num +1].name}</div>
+      <div class="slider__name-pet">${data[randomNum[2]].name}</div>
       <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
    </div>`
 
