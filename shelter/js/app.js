@@ -189,21 +189,21 @@ window.addEventListener("DOMContentLoaded", (() => {
          <picture><img src=${data[randomNum[0]].img} alt=${data[randomNum[0]].name}></picture>
       </div>
       <div class="slider__name-pet">${data[randomNum[0]].name}</div>
-      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a  class="slider__link">Learn more</a></div>
    </div>
    <div data-modal  id=${data[randomNum[1]].id} class="slider__card hide-523">
       <div class="slider__img">
          <picture><img src=${data[randomNum[1]].img} alt=${data[randomNum[1]].name}></picture>
       </div>
       <div class="slider__name-pet ">${data[randomNum[1]].name}</div>
-      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a  class="slider__link">Learn more</a></div>
    </div>
    <div data-modal id=${data[randomNum[2]].id} class="slider__card hide">
       <div class="slider__img">
          <picture><img src=${data[randomNum[2]].img} alt=${data[randomNum[2]].name}></picture>
       </div>
       <div class="slider__name-pet">${data[randomNum[2]].name}</div>
-      <div class="slider__btn pet-btn"> <a href="#" class="slider__link">Learn more</a></div>
+      <div class="slider__btn pet-btn"> <a  class="slider__link">Learn more</a></div>
    </div>`
 
    }
