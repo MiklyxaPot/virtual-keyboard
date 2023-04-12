@@ -82,13 +82,15 @@ window.addEventListener("DOMContentLoaded", (() => {
 
    function changPageOneNext(){
       if(firstNav.value == 1){
-         prevNav.classList.toggle('inactive')
+         prevNav.classList.remove('inactive')
+         prevNav.disabled = false;
          page1.style.display = 'none'
          page2.style.display = ''
          firstNav.textContent = "2";
          firstNav.value = 2;
       } else if (firstNav.value == 2){
-         prevNavDouble.classList.toggle('inactive')
+         prevNavDouble.classList.remove('inactive')
+         prevNavDouble.disabled = false;
          page2.style.display = 'none';
          page3.style.display = '';
          firstNav.textContent = "3";
@@ -104,10 +106,16 @@ window.addEventListener("DOMContentLoaded", (() => {
          firstNav.textContent = "5";
          firstNav.value = 5;
       }else {
-        
          page5.style.display = 'none'
          page6.style.display = '';
-  
+         prevNav.classList.remove('inactive');
+         prevNav.disabled = false;
+         prevNavDouble.classList.remove('inactive');
+         prevNavDouble.disabled = false;
+         nextNav.classList.add('inactive');
+         nextNavDouble.classList.add('inactive');
+         nextNav.disabled = true;
+         nextNavDouble.disabled = true;
          firstNav.textContent = "6";
          firstNav.value = 6;
       }
@@ -121,24 +129,30 @@ function changPageOnePrew(){
       page5.style.display = '';
       firstNav.textContent = "5";
       firstNav.value = 5;
+      nextNav.classList.remove('inactive');
+      nextNav.disabled = false;
    } else if (firstNav.value == 5){
       page5.style.display = 'none';
       page4.style.display = '';
       firstNav.textContent = "4";
       firstNav.value = 4;
+      nextNavDouble.classList.remove('inactive');
+      nextNavDouble.disabled = false;
    }else if (firstNav.value == 4){
       page4.style.display = 'none';
       page3.style.display = '';
       firstNav.textContent = "3";
       firstNav.value = 3;
    }else if (firstNav.value == 3){
-      prevNavDouble.classList.toggle('inactive')
+      prevNavDouble.classList.add('inactive')
+      prevNavDouble.disabled = true;
       page3.style.display = 'none';
       page2.style.display = '';
       firstNav.textContent = "2";
       firstNav.value = 2;
    }else {
-      prevNav.classList.toggle('inactive')
+      prevNav.classList.add('inactive');
+      prevNav.disabled = true;
       console.log('222');
       page2.style.display = 'none';
       page1.style.display = '';
@@ -149,8 +163,14 @@ function changPageOnePrew(){
    
 function changPageOneNextDouble(){
    if(firstNav.value >= 1){
-      prevNav.classList.toggle('inactive');
-      prevNavDouble.classList.toggle('inactive');
+      prevNav.classList.remove('inactive');
+      prevNav.disabled = false;
+      prevNavDouble.classList.remove('inactive');
+      prevNavDouble.disabled = false;
+      nextNav.classList.add('inactive');
+      nextNav.disabled = true;
+      nextNavDouble.classList.add('inactive');
+      nextNavDouble.disabled = true;
       page1.style.display = 'none';
       page2.style.display = 'none';
       page3.style.display = 'none';
@@ -165,8 +185,14 @@ function changPageOneNextDouble(){
 }
 function changPageOnePrewDouble(){
    if(firstNav.value <= 6 ){
-       prevNav.classList.toggle('inactive')
-       prevNavDouble.classList.toggle('inactive')
+      prevNav.classList.add('inactive');
+      prevNav.disabled = true;
+      prevNavDouble.classList.add('inactive');
+      prevNavDouble.disabled = true;
+      nextNav.classList.remove('inactive');
+      nextNav.disabled = false;
+      nextNavDouble.classList.remove('inactive');
+      nextNavDouble.disabled = false;
       page6.style.display = 'none';
       page2.style.display = 'none';
       page3.style.display = 'none';
