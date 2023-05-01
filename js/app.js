@@ -10,7 +10,7 @@ const arr = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'B
 
 const pageDom = () => {
   document.querySelector("#body").innerHTML = `<div class="container">
-  <input class="input" type="text" value = "">
+  <input class="input" type ="text" value = "">
   <div class="keyboard">
      
     
@@ -21,6 +21,8 @@ pageDom();
 
 
 const keyBoard = document.querySelector(".keyboard");
+
+
 
 
   const init = () =>{
@@ -52,7 +54,7 @@ const keyBoard = document.querySelector(".keyboard");
         out += `<div class = "key dark big-key" data ="${arr[i]}">${'Ctrl'}</div>`;
       }
       else if(arr[i] === ""){
-        out += `<div class = "key spaes" data ="${arr[i]}">${arr[i]}</div>`;
+        out += `<div class = "key spaes" data ="${'spase'}">${arr[i]}</div>`;
       }
       else if(arr[i].length == 3){
         out += `<div class = "key dark big-key" data ="${arr[i]}">${arr[i]}</div>`;
@@ -72,23 +74,51 @@ const keyBoard = document.querySelector(".keyboard");
 
   init();
 
+const keyBotton = keyBoard.querySelectorAll(".key"),
+      input = document.querySelector(".input");
 
   // 
 document.onkeydown = function(event){
-if(event.key === 'Backspace' || event.key ==='Tab' || event.key === 'ArrowUp'|| event.key === 'Shift' || event.key === 'Control' || event.key ==='Meta' || event.key ==='Alt' || event.key === 'ArrowLeft' || event.key ==='ArrowDown' || event.key ==='ArrowRight' || event.key === 'Enter' || event.key === 'CapsLock' || event.key === 'Delete'){
 
-  keyBoard.querySelector('[data = "'+event.key+'"]').classList.add('active');
+  keyBotton.forEach( function(item){
+    item.classList.remove("active");
+  });
 
-}else {
+  if(event.key === 'Backspace' || event.key ==='Tab' || event.key === 'ArrowUp'|| event.key === 'Shift' || event.key === 'Control' || event.key ==='Meta' || event.key ==='Alt' || event.key === 'ArrowLeft' || event.key ==='ArrowDown' || event.key ==='ArrowRight' || event.key === 'Enter' || event.key === 'CapsLock' || event.key === 'Delete' || event.key === ''){
 
-  keyBoard.querySelector('[data = "'+event.key.toLowerCase()+'"]').classList.add('active');
-}
+    keyBoard.querySelector('[data = "'+event.key+'"]').classList.add('active');
 
-  // const dataKey = keyBoard.querySelector('[data = "'+event.key.toLowerCase()+'"]');
-  // // keyBoard.querySelector(".key[data = '"+event.key+"']").classList.add("active");
-  // dataKey.classList.add('active');
- 
+  }else {
+
+    keyBoard.querySelector('[data = "'+event.key.toLowerCase()+'"]').classList.add('active');
+  };
+
+  input.value += event.key;
 };
 
+keyBotton.forEach( item =>{
+  // item.addEventListener('click', function(event){
+  //   keyBotton.forEach(item =>{
+  //      item.classList.remove("active");
+  //      item.classList.add("active");
+  //   });
+   
+  // });
+  item.onclick = function(e){
+    keyBotton.forEach(function(e){
+      e.classList.remove('active')
+    });
+    let codeKey = this.getAttribute('data');
+    this.classList.add('active');
+    input.value += codeKey;
+    
+  }
+});
 
-  
+
+
+
+
+
+
+
