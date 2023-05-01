@@ -6,13 +6,13 @@
 // }))
 
 
-const arr = ['~`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\', 'Del', 'CapsLock','A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter', 'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'ArrowUp', 'Shift', 'Ctrl', 'Win', 'Alt', '', 'Alt','Ctrl', 'ArrowLeft',  'ArrowDown', 'ArrowRight'];
+const arr = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'Delete', 'CapsLock','a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter', 'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'Shift', 'Control', 'Meta', 'Alt', '', 'Alt','Control', 'ArrowLeft',  'ArrowDown', 'ArrowRight'];
 
 const pageDom = () => {
-  document.querySelector('#body').innerHTML = `<div class="container">
-  <input class="input" type="text">
+  document.querySelector("#body").innerHTML = `<div class="container">
+  <input class="input" type="text" value = "">
   <div class="keyboard">
-    
+     
     
   </div>
 </div>`;
@@ -20,28 +20,38 @@ const pageDom = () => {
 pageDom();
 
 
-const keyBoared = document.querySelector('.keyboard');
+const keyBoard = document.querySelector(".keyboard");
+
 
   const init = () =>{
 
-    let out = '';
+    let out = "";
     for (let i = 0; i < arr.length; i++){
       if( i == 0){
         out += `<div class = "key dark" data ="${arr[i]}">${arr[i]}</div>`;
       }
-      else if(arr[i] === 'ArrowUp'){
+      else if(arr[i] === "ArrowUp"){
         out += `<div class = "key dark padding-none" data ="${arr[i]}">${'<img src="./asset/up.png"  class="img "></img>'}</div>`
       }
-      else if(arr[i] === 'ArrowDown'){
+      else if(arr[i] === "ArrowDown"){
         out += `<div class = "key dark dawn padding-none" data ="${arr[i]}">${'<img src="./asset/up.png"  class="img "></img>'}</div>`;
       }
-      else if(arr[i] === 'ArrowLeft'){
+      else if(arr[i] === "ArrowLeft"){
         out += `<div class = "key dark left padding-none" data ="${arr[i]}">${'<img src="./asset/up.png"  class="img "></img>'}</div>`;
       }
-      else if(arr[i] === 'ArrowRight'){
+      else if(arr[i] === "ArrowRight"){
         out += `<div class = "key dark rigth padding-none" data ="${arr[i]}">${'<img src="./asset/up.png"  class="img "></img>'}</div>`;
       }
-      else if(arr[i] === ''){
+      else if(arr[i] === "Delete"){
+        out += `<div class = "key dark big-key" data ="${arr[i]}">${'Del'}</div>`;
+      }
+      else if(arr[i] === "Meta"){
+        out += `<div class = "key dark big-key" data ="${arr[i]}">${'Win'}</div>`;
+      }
+      else if(arr[i] === "Control"){
+        out += `<div class = "key dark big-key" data ="${arr[i]}">${'Ctrl'}</div>`;
+      }
+      else if(arr[i] === ""){
         out += `<div class = "key spaes" data ="${arr[i]}">${arr[i]}</div>`;
       }
       else if(arr[i].length == 3){
@@ -52,17 +62,33 @@ const keyBoared = document.querySelector('.keyboard');
       else if(arr[i].length > 3){
         out += `<div class = "key dark shift" data ="${arr[i]}">${arr[i]}</div>`;
       }
-      else{ out += `<div class="key" data ="${arr[i]}" >${arr[i]}</div>`;
+      else{ out += `<div class="key upperCase" data ="${arr[i]}" >${arr[i]}</div>`;
     }
     }
 
-    keyBoared.innerHTML = out;
+    keyBoard.innerHTML = out;
 
-  }
+  };
 
   init();
 
 
+  // 
+document.onkeydown = function(event){
+if(event.key === 'Backspace' || event.key ==='Tab' || event.key === 'ArrowUp'|| event.key === 'Shift' || event.key === 'Control' || event.key ==='Meta' || event.key ==='Alt' || event.key === 'ArrowLeft' || event.key ==='ArrowDown' || event.key ==='ArrowRight' || event.key === 'Enter' || event.key === 'CapsLock' || event.key === 'Delete'){
+
+  keyBoard.querySelector('[data = "'+event.key+'"]').classList.add('active');
+
+}else {
+
+  keyBoard.querySelector('[data = "'+event.key.toLowerCase()+'"]').classList.add('active');
+}
+
+  // const dataKey = keyBoard.querySelector('[data = "'+event.key.toLowerCase()+'"]');
+  // // keyBoard.querySelector(".key[data = '"+event.key+"']").classList.add("active");
+  // dataKey.classList.add('active');
+ 
+};
 
 
   
