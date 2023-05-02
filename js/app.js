@@ -17,6 +17,7 @@ const pageDom = () => {
   <div class="keyboard">
   </div>
   <p>язык меняется клавишами Alt + Shift левые. есть баг начальная раскладка должна совпадать с вашим текущим языком</p>
+  <p>еще баг после смены раскладки языка не работает удаление активной клавиши и событие клик на мыши. ищу решение</p>
 </div>`;
 };
 pageDom();
@@ -27,11 +28,13 @@ const keyBoard = document.querySelector(".keyboard");
 
 
 
-let arrCurent = arr;
+let arrCurent = arrRus;
+
+
 const init = () => {
 
   let out = "";
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arrCurent.length; i++) {
     if (i == 0) {
       out += `<div class = "key dark" data ="${arrCurent[i]}">${arrCurent[i]}</div>`;
     }
@@ -78,8 +81,43 @@ const init = () => {
 
 init();
 
+// const changeKeyboard = (e) => {
+//   if (e.code == "AltLeft") {
+//     document.onkeydown = function (e) {
+//       if (e.code =="ShiftLeft") {
+//         if (arrCurent == arr) {
+//           arrCurent = arrRus;
+//           init();
+//         } else {
+//           arrCurent = arr;
+//           init();
+//         }
+//       }
+//     };
+//   }
+// };
+document.onkeydown = function(e){
+  if (e.code == "AltLeft") {
+    document.onkeyup = function (e) {
+      if (e.code =="ShiftLeft") {
+        if (arrCurent == arr) {
+          arrCurent = arrRus;
+          init();
+          e.preventDefault();
+        } else {
+          arrCurent = arr;
+          init();
+          e.preventDefault();
+        }
+      }
+    };
+  }
+};
+
+// document.addEventListener('keydown', changeKeyboard);
+
 const keyBotton = keyBoard.querySelectorAll(".key"),
-  input = document.querySelector(".input");
+      input = document.querySelector(".input");
 
 
 const removeKey = () => {
@@ -88,9 +126,12 @@ const removeKey = () => {
   });
 };
 
-document.onkeydown = function (event) {
+
+
+ const pressKey = (event) =>{
 
   removeKey();
+
 
   if (event.key === 'Backspace' || event.key === 'Tab' || event.key === 'ArrowUp' || event.key === 'Shift' || event.key === 'Control' || event.key === 'Meta' || event.key === 'Alt' || event.key === 'ArrowLeft' || event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'Enter' || event.key === 'CapsLock' || event.key === 'Delete' || event.key === ' ') {
 
@@ -98,21 +139,22 @@ document.onkeydown = function (event) {
 
     setTimeout(removeKey, 200);
 
+
   } else {
     keyBoard.querySelector('[data = "' + event.key.toLowerCase() + '"]').classList.add('active');
 
     setTimeout(removeKey, 200);
-
   }
 
   input.value += event.key;
 };
+document.addEventListener('keydown', pressKey);
 
-keyBotton.forEach((item) => {
+keyBotton.forEach(item => {
   item.onclick = function () {
-    keyBotton.forEach(function () {
+    // keyBotton.forEach(function () {
       removeKey();
-    });
+    // });
     let codeKey = this.getAttribute('data');
     this.classList.add('active');
     setTimeout(removeKey, 200);
@@ -123,24 +165,8 @@ keyBotton.forEach((item) => {
 
 
 
-const changeKeyboard = (e) => {
-  if (e.code === "AltLeft") {
-    document.onkeyup = function (e) {
-      if (e.code === "ShiftLeft") {
-        if (arrCurent === arr) {
-          arrCurent = arrRus;
-          init();
-        } else {
-          arrCurent = arr;
-          init();
-        }
-      }
-    };
-  }
-};
 
 
-document.addEventListener('keydown', changeKeyboard);
 
 
 
